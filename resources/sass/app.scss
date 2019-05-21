@@ -1,6 +1,7 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
+
 // Variables
 @import 'variables';
 
@@ -10,19 +11,140 @@
 // SummerNote
 @import '../../node_modules/summernote/dist/summernote-bs4.css';
  
-.navbar-laravel {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+// Layout
+.wrapper {  
+    width: 100%;
+    @include media-breakpoint-up(md) { 
+        display: flex;
+        align-items: stretch;
+    }
 }
+#page-content{
+    flex-grow: 1;
+    padding:0rem 1rem;
+    
+    min-height: 100vh;
+    position:relative;
+    @include media-breakpoint-up(md) { 
+        margin-left: $sidebar-width;
+    }    
+}
+#sidebar{
+    background: darken($gray-900, 5%);
+
+    @include media-breakpoint-up(md) { 
+        display:block;
+        height: 100vh;
+        position:fixed;
+        width: $sidebar-width;
+    }
+}
+// Elements
 .title-bar{
     margin-bottom:10px; 
     padding-bottom:10px;
-    border-bottom:1px solid #efefef;
+    border-bottom:1px solid #434950;
+    h1,h2,h3,h4,h5{
+        padding-top:10px;
+    }
+}
+// Common Elements
+.user-avatar{
+    background:#000;
+    height: $avatar-small;
+    width:  $avatar-small;
+    float:left;
+    margin-right:1rem;
+    #create-comment &{
+        height: $avatar-small;
+        width:  $avatar-small;
+    }
+    @include media-breakpoint-up(md) {
+        height: $avatar-full;
+        width:  $avatar-full;
+    }
 }
 
+//Thread Display
+.thread-content{
+    @include media-breakpoint-up(md) {
+        clear:both;
+        margin: 30px 0px;
+    }
+}
+.thread-detail{
+    width: 100%;
+    p{
+        margin: 0rem; 
+    }
+    h1{
+        clear: both;
+        padding:1rem 0;
+    }
+    @include media-breakpoint-up(md) {
+        h1{
+            clear: none;
+            padding:0rem;
+        }
+    }
+}
+#comments-section{
+    padding-top:30px;
+}
+#create-comment{
+    display:none;
+    position:fixed;  
+    border:10px solid $primary;
+    left:0px; 
+    right:0px;
+    bottom:0px;
+    z-index:10;
+    padding:1rem;
+    background: darken($gray-900, 5%);
+    box-shadow: 3px -3px 3px 0px rgba(0,0,0,0.16);
+    &.show{
+        display:block;
+    }
+    @include media-breakpoint-up(md) { 
+        margin-left: $sidebar-width;
+    }
+}
+// Buttons
+.btn-outline-primary{
+    color: $gray-500;
+}
+.button-toolbar{
+    text-align: left;
+    border-top: 1px solid darken($gray-700, 5%);
+    .contents{
+        display:inline-block;
+        padding: 11px 10px 10px 0px;
+        background: $gray-900;
+        position:relative;
+        top:-1px;
+        border-bottom-right-radius: 5px;
+        align-items:flex-start;
+        border-bottom: 1px solid darken($gray-700, 5%);
+        border-right: 1px solid darken($gray-700, 5%);
+
+        form{
+            display:inline-block;
+        }
+    }
+}
+.filter-toolbar{
+    background: darken($gray-900, 5%);
+    padding: 1em;
+    
+}
+.vote-count{ 
+    font-weight: bold;
+}
 
 
 // Summernote
 .sn-checkbox-open-in-new-window{
     display:none;
 }
+
+

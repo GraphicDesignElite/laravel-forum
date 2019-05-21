@@ -74,4 +74,7 @@ class User extends Authenticatable
     public function isSuperAdmin(){
         return $this->hasRole('superadmin');
     }
+    public function upvotedThreads(){
+        return $this->morphedByMany('App\Thread', 'upvotable')->whereDeletedAt(null);
+    }
 }

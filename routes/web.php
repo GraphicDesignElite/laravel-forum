@@ -30,6 +30,10 @@ Route::get('/{topic}/{slug}/create-thread', 'ThreadController@create')->name('cr
 Route::get('/{topic}/{slug}/{thread}/{threadslug}', 'ThreadController@show')->name('show-thread');
 Route::put('/{topic}', 'ThreadController@store');
 
+//Upvotes
+Route::post('/upvote/thread/{thread}', 'UpvoteController@upvoteThread')->name('upvote-thread');
+Route::post('/upvote/comment/{comment}', 'UpvoteController@upvoteComment')->name('upvote-comment');
+
 //Comments
 Route::post('/comment/{thread}', 'CommentController@store');
 

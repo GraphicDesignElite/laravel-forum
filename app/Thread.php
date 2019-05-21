@@ -1,11 +1,17 @@
 <?php
 
 namespace App;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
+
+use App\Http\Traits\VoteableTrait;
+use App\Http\Traits\OwnedbyTrait;
 
 class Thread extends Model
 {
+    use VoteableTrait;
+    use OwnedbyTrait;
+
     protected $fillable = [
         'title', 
         'content',
@@ -14,8 +20,6 @@ class Thread extends Model
         'user_id',
         'username',
         'views',
-        'upvotes',
-        'downvotes',
         'is_active'
     ];
     public function topic(){
@@ -24,7 +28,5 @@ class Thread extends Model
     public function comments(){
         return $this->hasMany(Comment::class);
     }
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
+
 }

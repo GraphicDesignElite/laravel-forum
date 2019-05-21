@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="jumbotron text-center">
-        <h1 class="display-3">Topics</h1>
-        <p class="lead">View all Topics</p>
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="display-3">Topics</h1>
+            <p class="lead">View all Topics</p>
+        </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="title-bar">
@@ -31,9 +33,7 @@
                                         {{$topic->thread_count}} {{  $topic->thread_count != 1 ? "Threads" : "Thread" }}
                                     </small>
                                 </div>
-                                <div class="button-panel">
-                                   
-                                </div>
+                                
                             </div>
                         </div>
                     </div>    

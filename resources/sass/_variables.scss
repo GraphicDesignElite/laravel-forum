@@ -1,11 +1,8 @@
-// Body
-
 
 // Typography
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
-
 
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
@@ -40,7 +37,6 @@ $light:         $gray-200 !default;
 $dark:          $gray-900 !default;
 
 // Body
-
 $body-bg:                   $gray-900 !default;
 $body-color:                #aaa !default;
 
@@ -90,6 +86,7 @@ $nav-tabs-link-active-border-color: $nav-tabs-border-color !default;
 // Navbar
 
 $navbar-padding-y:                  0 !default;
+$navbar-padding-x:                  0 !default;
 
 $navbar-dark-hover-color:           $white !default;
 
@@ -116,7 +113,7 @@ $pagination-disabled-border-color:  rgba($black, 0.6) !default;
 
 // Jumbotron
 
-$jumbotron-bg:                      darken($gray-900, 5%) !default;
+$jumbotron-bg:                      none !default;
 
 // Cards
 
@@ -125,22 +122,18 @@ $card-cap-bg:                       lighten($gray-800, 10%) !default;
 $card-bg:                           lighten($body-bg, 5%) !default;
 
 // Popovers
-
 $popover-bg:                        lighten($body-bg, 5%) !default;
 
 // Modals
 
 $modal-content-bg:                  lighten($body-bg, 5%) !default;
-
 $modal-header-border-color:         rgba(0,0,0,.2) !default;
 
 // Progress bars
-
 $progress-bg:                       darken($gray-900, 5%) !default;
 $progress-bar-color:                $gray-600 !default;
 
 // List group
-
 $list-group-bg:                     lighten($body-bg, 5%) !default;
 $list-group-border-color:           rgba($black, 0.6) !default;
 
@@ -154,9 +147,14 @@ $list-group-disabled-color:         $gray-700 !default;
 $list-group-action-color:           $white !default;
 
 // Breadcrumbs
-
 $breadcrumb-active-color:           $gray-500 !default;
 
 // Code
-
 $pre-color:                         inherit !default;
+
+
+// Sidebar
+$sidebar-width:                     300px;
+
+$avatar-full:                       80px;
+$avatar-small:                      40px;

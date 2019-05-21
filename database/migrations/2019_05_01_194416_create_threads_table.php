@@ -27,9 +27,7 @@ class CreateThreadsTable extends Migration
             $table->string('slug');
             $table->boolean('is_open')->default(0);
             $table->bigInteger('views')->default(0);
-            $table->bigInteger('upvotes')->default(0);
-            $table->bigInteger('downvotes')->default(0);
-            
+
         });
     }
 

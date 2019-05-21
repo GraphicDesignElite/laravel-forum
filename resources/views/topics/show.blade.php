@@ -1,10 +1,12 @@
 @extends('layouts.app')
 @section('content')
-    <div class="jumbotron text-center">
-        <h1 class="display-3">{{$topic->name}}</h1>
-        <p class="lead">{{$topic->description}}</p>
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="display-3">{{$topic->name}}</h1>
+            <p class="lead">{{$topic->description}}</p>
+        </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="title-bar">

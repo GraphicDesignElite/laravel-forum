@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Topic;
 use App\Thread;
 class ThreadController extends Controller
@@ -76,10 +77,13 @@ class ThreadController extends Controller
         abort_if($slug !== $topic->slug || $threadslug !== $thread->slug, 403); 
         $thread->views = $thread->views + 1;
         $thread->save();
-        // Get comment details
-        $comments = $thread->comments()->orderBy('created_at', 'DESC')->with('user')->get();
+        // Load Comments
+        $thread->load('comments.upvotes');
 
-        return view('threads.show', compact('thread', 'comments'));
+        //dd($thread->comments[0]->upvotes);
+        
+        
+        return view('threads.show', compact('thread'));
     }
 
     /**

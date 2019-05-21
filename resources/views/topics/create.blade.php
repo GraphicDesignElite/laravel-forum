@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="jumbotron text-center">
-        <h1 class="display-3">Create a New Topic</h1>
-        <p class="lead">Add a new top level topic category.</p>
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="display-3">Create a New Topic</h1>
+            <p class="lead">Add a new top level topic category.</p>
+        </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 @include('partials.form-error-message')
