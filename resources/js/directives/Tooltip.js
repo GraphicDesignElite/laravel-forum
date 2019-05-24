@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-Vue.directive('tooltip', function(el, binding){
+export default Vue.directive('tooltip', function(el, binding){
     $(el).tooltip({
         title: binding.value,
         placement: binding.arg,

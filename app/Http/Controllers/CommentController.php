@@ -23,7 +23,8 @@ class CommentController extends Controller
         // Use custom class to process summernote data
         $validated['content'] = \AppHelper::instance()->makeSummernote($validated['content']);
 
-        Comment::create($validated);
-        return \Redirect::back();
+        $comment = Comment::create($validated);
+        return response()->json(['comment' => $comment]);
+        //return \Redirect::back();
     }
 }

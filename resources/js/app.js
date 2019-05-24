@@ -9,14 +9,19 @@ require('../../node_modules/summernote/dist/summernote-bs4');
 
 window.Vue = require('vue');
 
-
-import Tooltip from './directives/Tooltip.js';
+import store from '../js/store'
+import Tooltip from './directives/Tooltip';
+import CommentBox from './components/CommentBox';
 import UpvoteButton from './components/UpvoteButton';
+import ReplyButton from './components/ReplyButton';
 
 const app = new Vue({
+    store,
     el: '#app',
     components: {
-        UpvoteButton
+        UpvoteButton,
+        CommentBox,
+        ReplyButton
     },
     directives: {
         Tooltip

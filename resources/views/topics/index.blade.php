@@ -1,6 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
+{{ Breadcrumbs::render('home') }}
     <div class="container-fluid">
         <div class="row">
             <h1 class="display-3">Topics</h1>

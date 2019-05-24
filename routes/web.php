@@ -36,6 +36,7 @@ Route::post('/upvote/comment/{comment}', 'UpvoteController@upvoteComment')->name
 
 //Comments
 Route::post('/comment/{thread}', 'CommentController@store');
+Route::post('/comment/thread/{thread}', 'CommentController@store');
 
 // Auth and Dashboard
 Auth::routes();

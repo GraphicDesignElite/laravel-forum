@@ -26,10 +26,10 @@
                             vote-count="{{$thread->upvotes->count()}}" 
                             v-bind:did-vote="{{ json_encode($thread->isUpvoted) }}" 
                             id="{{$thread->id}}" 
-                            voteCount="{{$thread->upvotes->count()}}"
                             type="thread" >
                         </upvote-button>
-                        <a name="" id="" class="btn btn-outline-primary btn-sm" href="#" role="button" v-on:click="toggleCreateComment">Reply</a>
+
+                        <reply-button type="thread" itemid="{{$thread->id}}"/>
                     </div>
                 </div> 
             </div>
@@ -55,11 +55,10 @@
                                         vote-count="{{$comment->upvotes->count()}}" 
                                         v-bind:did-vote="{{ json_encode($comment->isUpvoted) }}" 
                                         id="{{$comment->id}}" 
-                                        voteCount="{{$comment->upvotes->count()}}"
                                         type="comment" >
                                     </upvote-button>
-
-                                    <a href="#" class="btn btn-outline-primary btn-sm">Reply</a>
+                                    <reply-button type="comment" itemid=""/>
+                                    <a href="#" class="btn btn-secondary btn-sm">Reply</a>
                                 </div>
                             </div> 
                         </div>
@@ -69,7 +68,14 @@
         </div>
     </div>
     @if (!Auth::guest())
-        <div id="create-comment" v-bind:class="{ show: uiCreateComment }">
+        <comment-box 
+            itemid="1"
+            type="thread"
+            username="{{Auth::user()->username}}">
+        </comment-box>
+            
+        <?php /* 
+        <div class="create-comment" v-bind:class="{ show: uiCreateComment }">
             @include('partials.form-error-message')
             <form action="/comment/{{$thread->id}}" method="POST">
                 @csrf
@@ -95,7 +101,8 @@
                     </div>
                 </div> 
             </form>
-        
         </div>
+        */ ?> 
     @endif
+    
 @endsection

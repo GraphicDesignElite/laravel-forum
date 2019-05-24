@@ -91,7 +91,7 @@
 #comments-section{
     padding-top:30px;
 }
-#create-comment{
+.create-comment{
     display:none;
     position:fixed;  
     border:10px solid $primary;
@@ -115,17 +115,14 @@
 }
 .button-toolbar{
     text-align: left;
-    border-top: 1px solid darken($gray-700, 5%);
+   
     .contents{
         display:inline-block;
         padding: 11px 10px 10px 0px;
-        background: $gray-900;
+        
         position:relative;
-        top:-1px;
-        border-bottom-right-radius: 5px;
         align-items:flex-start;
-        border-bottom: 1px solid darken($gray-700, 5%);
-        border-right: 1px solid darken($gray-700, 5%);
+        
 
         form{
             display:inline-block;
@@ -140,11 +137,27 @@
 .vote-count{ 
     font-weight: bold;
 }
-
+.comment{
+    background: darken($gray-900, 5%);
+    margin: 13px 0px; 
+    border-radius:6px;
+    padding: 1em;
+}
 
 // Summernote
 .sn-checkbox-open-in-new-window{
     display:none;
 }
-
+.note-editor.note-frame{
+    background:none;
+    border:1px solid #3e3e3e;
+    .note-editing-area .note-editable{
+        background:none;
+        color:inherit;
+    }
+    .note-statusbar{
+        background: darken($gray-900, 7%);
+        border-top:0px;
+    }
+} 
 
